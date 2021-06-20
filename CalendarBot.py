@@ -26,6 +26,7 @@ def prompt():
 
 # Year - int, month - int, day - int, hour - int, length(hours and minutes) - int, daysOfWeek - int[], title - string, description - string  
 def event(year, month, day, hour, lengthHours, lengthMinutes, daysOfWeek, title, description): 
+   service = get_calendar_service()
    for cur in daysOfWeek:
       tomorrow = datetime(year, month, day, hour) + timedelta(days=cur)
       start = tomorrow.isoformat()
